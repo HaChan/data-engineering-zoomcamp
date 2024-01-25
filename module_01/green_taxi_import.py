@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 engine = create_engine('postgresql://root:root@localhost:9876/ny_taxi')
 
-green_csv = "green_tripdata_2019-09.csv"
+green_csv = "../data/green_tripdata_2019-09.csv"
 df = pd.read_csv(green_csv, nrows=10)
 df_iter = pd.read_csv(green_csv, iterator=True, chunksize=10_000)
 

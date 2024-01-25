@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 engine = create_engine('postgresql://root:root@localhost:9876/ny_taxi')
 
-df = pd.read_csv("yellow_tripdata_2021-01.csv", nrows=10)
+df = pd.read_csv("data/yellow_tripdata_2021-01.csv", nrows=10)
 
 df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
 df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
