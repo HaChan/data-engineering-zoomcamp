@@ -1,2 +1,5 @@
-terraform/keys/
-ny-venv/
+terraform/keys
+terraform/output.tf
+ny-taxi-volume/
+my-venv
+data
