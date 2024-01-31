@@ -32,4 +32,6 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "${POSTGRES_PORT}:9876"
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    volumes:
+      - ./green_taxi_volume:/var/lib/postgresql/data
