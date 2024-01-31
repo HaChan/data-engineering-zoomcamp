@@ -3,3 +3,4 @@ terraform/output.tf
 ny-taxi-volume/
 my-venv
 data
+*.parquet
