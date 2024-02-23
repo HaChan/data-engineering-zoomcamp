@@ -1,0 +1,31 @@
+version: 2
+sources:
+- name: staging
+  database: dev
+  schema: ny_tripdata
+  quoting:
+    database: false
+    schema: false
+    identifier: false
+  tables:
+    - name: yellow_tripdata
+      columns:
+        - name: VendorID
+          quote: true
+        - name: RatecodeID
+          quote: true
+        - name: PULocationID
+          quote: true
+        - name: DOLocationID
+          quote: true
+    - name: green_tripdata
+      columns:
+        - name: VendorID
+          quote: true
+        - name: RatecodeID
+          quote: true
+        - name: PULocationID
+          quote: true
+        - name: DOLocationID
+          quote: true
+    - name: fhv_tripdata

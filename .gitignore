@@ -6,3 +6,4 @@ data
 *.parquet
 *.duckdb
 *.duckdb.*
+*.log

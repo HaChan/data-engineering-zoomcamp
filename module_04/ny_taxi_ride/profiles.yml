@@ -1,0 +1,12 @@
+ny_taxi_ride:
+  target: dev
+  outputs:
+    dev:
+      dbname: dev
+      host: localhost
+      pass: postgres
+      port: 5432
+      schema: ny_tripdata
+      threads: 4
+      type: postgres
+      user: postgres

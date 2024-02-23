@@ -33,7 +33,19 @@ def download_files_concurrently(urls, folder="data"):
                 print(f"{url} generated an exception: {exc}")
 
 # Use the concurrent download function
-base_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2022"
-urls = [f"{base_url}-{i:02}.parquet" for i in range(1, 13)]
-download_files_concurrently(urls)
+yellow_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata"
+green_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata"
+fhv_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata"
+yellow_urls = []
+green_urls = []
+for year in [2019, 2020]:
+    for month in range(1, 13):
+        yellow_urls.append(f"{yellow_url}_{year}-{month:02}.csv.gz")
+        green_urls.append(f"{green_url}_{year}-{month:02}.csv.gz")
 
+fhv_urls = [f"{fhv_url}_2019-{i:02}.csv.gz" for i in range(1, 13)]
+
+#download_files_concurrently(yellow_urls, "data/ny_taxi")
+#download_files_concurrently(green_urls, "data/ny_taxi")
+#download_files_concurrently(fhv_urls, "data/ny_taxi")
+download_file("https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-01.csv.gz", "data/ny_taxi")
